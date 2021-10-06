@@ -1,0 +1,114 @@
+"use strict"
+
+let inputNombre = document.querySelector("#nombre");
+let inputApellido = document.querySelector("#apellido");
+let inputEdad = document.querySelector("#edad");
+let inputCalificacion = document.querySelector("#calificacion");
+let btnAgregar = document.querySelector("#btn-agregar");
+btnAgregar.addEventListener("click", agregar);
+let btnEstadisticas = document.querySelector("#btn-estadisticas");
+btnEstadisticas.addEventListener("click", estadisticas);
+
+let alumnos = [{
+        "nombre": "Juan",
+        "apellido": "Garcia",
+        "edad": 20,
+        "calificacion": 8
+    },
+
+    {
+        "nombre": "Enzo",
+        "apellido": "Perez",
+        "edad": 34,
+        "calificacion": 10
+    },
+
+    {
+        "nombre": "Maria",
+        "apellido": "Fernandez",
+        "edad": 29,
+        "calificacion": 9
+    },
+
+];
+
+mostrar();
+
+//console.log(alumnos);
+
+//console.log(alumnos[1].edad);
+
+function agregar() {
+    //console.log("Entra en funcion Agregar");
+    let nombre = inputNombre.value;
+    let apellido = inputApellido.value;
+    let edad = inputEdad.value;
+    let calificacion = parseFloat(parseFloat(inputCalificacion.value).toFixed(2));
+
+    let renglon = {
+        "nombre": nombre,
+        "apellido": apellido,
+        "edad": edad,
+        "calificacion": calificacion
+    }
+
+    alumnos.push(renglon);
+    inputNombre.value = "";
+    inputApellido.value = "";
+    inputEdad.value = "";
+    inputCalificacion.value = "";
+
+
+    // console.log(renglon);
+    // console.log(alumnos);
+    // console.log(alumnos[0].calificacion*0.5);
+    // console.log(alumnos[3].calificacion*0.5);
+
+    mostrar();
+
+}
+
+function mostrar() {
+    let listaCalificaciones = document.querySelector(".lista-calificaciones");
+
+    console.log(listaCalificaciones);
+
+    listaCalificaciones.innerHTML = '';
+
+    for (let i = 0; i < alumnos.length; i++) {
+        listaCalificaciones.innerHTML += `<li>${alumnos[i].nombre} 
+                                            , ${alumnos[i].apellido}
+                                            , Edad: ${alumnos[i].edad}
+                                            , Calificacion: ${alumnos[i].calificacion}
+                                          </li>`;
+    }
+    console.log(alumnos);
+}
+
+
+function estadisticas() {
+    let estadisticas = document.querySelector(".lista-estadisticas");
+    estadisticas.innerHTML = "";
+    let aprobados = 0;
+    let desaprobados = 0;
+    let totalCalificaciones = 0;
+
+    for (let i = 0; i < alumnos.length; i++) {
+
+        totalCalificaciones += alumnos[i].calificacion;
+
+        if (alumnos[i].calificacion >= 4) {
+            aprobados++
+        } else {
+            desaprobados++;
+        }
+    }
+
+    console.log("Apobados: ", aprobados);
+    console.log("Desaprobados: ", desaprobados);
+
+    estadisticas.innerHTML += `<li>Aprobados: ${aprobados} </li>
+                               <li>Desaprobados: ${desaprobados} </li>
+                               <li>Calificacion Promedio: ${totalCalificaciones/alumnos.length} </li>`
+
+}
