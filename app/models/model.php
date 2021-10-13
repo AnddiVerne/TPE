@@ -13,12 +13,12 @@ class Model {
 
     /* Recibe los parametros  */
     private function conectar() {
-        global $params;
-        $host = $params['host'];
-        $port = $params['port'];;
-        $db = $params['db'];
-        $user = $params['user'];
-        $password = $params['password'];
+        global $param;
+        $host = $param['host'];
+        $port = $param['port'];;
+        $db = $param['db'];
+        $user = $param['user'];
+        $password = $param['password'];
         $dsn = "mysql:host=$host:$port;dbname=$db;charset=UTF8";
 
         try {       /* viendo En la clase de MVC */

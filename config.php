@@ -1,15 +1,15 @@
 <?php
 
-$params = [];
+$param = [];
 
-$params['host'] = 'localhost';
+$param['host'] = 'localhost';
 
-$params['port'] = 3306;
+$param['port'] = 3306;
 
-$params['db'] = 'andel';    /* o "andel_db"?? */
+$param['db'] = 'andel';    /* o "andel_db"?? */
 
-$params['user'] = 'root';
+$param['user'] = 'root';
 
-$params['password'] = '';
+$param['password'] = '';
 
 ?>

@@ -484,6 +484,9 @@ footer {
     /*grid-area: creador;*/
 }
 
+#idPlato tr:nth-child(1) {
+    display: none;
+}
 
 /* #col1{
         grid-area: columna1;
