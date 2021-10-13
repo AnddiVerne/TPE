@@ -1,8 +1,9 @@
 <?php 
-require_once ("app\controller\controller.php");  /* al controlador */
-require_once (".php");
+DIE(__FILE__.__LINE__);
+require_once ("app\controller\controller.php");         /* al controlador */
+require_once ("app\controller\controllerUser.php");
 
-
+define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
 if (!empty($_GET['action'])){
     $action = $_GET['action'];
@@ -12,8 +13,9 @@ else {
 }
 
 $params = explode ('/',$action);
-    /* $controllerPag = new ControllerPag();      crear los controladores
-    $controllerUser = new ControllerUser(); */
+$controllerPag = new ControllerPag();      /* crear los controladores */
+$controllerUser = new ControllerUser(); 
+    
 switch($params[0]){
     case 'home':
         $controllerPag->showHome();
@@ -27,7 +29,6 @@ switch($params[0]){
     case 'nosotros':
         $controllerPag->showNosotros();
     ;break;
-
     case 'addCategories':
         $controllerDelivery->addCategories();
     ;break;
@@ -46,7 +47,6 @@ switch($params[0]){
     case 'deleteFood':
         $controllerDelivery->deleteFood($params[1]);
     ;break;
-
     case 'crearUser':
         $controllerUser->createUser();
     ;break;
@@ -56,8 +56,9 @@ switch($params[0]){
     case 'logout':
         $controllerUser->logout();
     ;break;
-
     default:
         echo "Error 404 - Page not fund"
     ;break;
 }
+
+?>
