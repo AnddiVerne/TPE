@@ -484,13 +484,10 @@ footer {
     /*grid-area: creador;*/
 }
 
-<<<<<<< HEAD
 .platos td:nth-child(1) {
-=======
-#idPlato tr:nth-child(1) {
->>>>>>> f182c2353bf82153f75e472807a883e5425a5e51
     display: none;
 }
+
 
 /* #col1{
         grid-area: columna1;

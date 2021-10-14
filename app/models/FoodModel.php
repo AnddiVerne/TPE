@@ -7,11 +7,7 @@ class FoodModel extends Model
 
     public function getAllFoods()
     {
-<<<<<<< HEAD
         $sql = "SELECT * FROM productos JOIN categoria ON productos.id_categoria = categoria.id_categoria";
-=======
-        $sql = "SELECT * FROM productos";
->>>>>>> f182c2353bf82153f75e472807a883e5425a5e51
         $query = $this->pdo->prepare($sql);
         $query->execute();
         $foods = $query->fetchAll(PDO::FETCH_OBJ);

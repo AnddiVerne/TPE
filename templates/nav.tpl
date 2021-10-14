@@ -66,6 +66,13 @@
                             </svg>
                     </li></a>
                     </li>
+                    <li class="nav-item">
+                    {if $email}
+                    <a class ="nav-link" href="logout">Desconectarse</a>
+                     {else}
+                    <a class="nav-link" href="login">Loguearse</a>
+                    {/if}
+                    </li>
                 </ul>
             </div>
         </div>
