@@ -10,11 +10,11 @@ function crearConexion() {
     // Direccion del puerto (normal: 3306)
     $port = 3306;
     // Nombre de la base de datos:
-    $db = 'tododb';
+    $db = 'andel';
     // Usuario de conexion (normal: root):
     $user = 'root';
     // Password del usuario (normal: nada o root)
-    $password = 'tudai';
+    $password = '';
 
     $dsn = "mysql:host=$host:$port;dbname=$db;charset=UTF8";
 

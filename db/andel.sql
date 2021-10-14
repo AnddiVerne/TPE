@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 1-10-2021 a las 20:31:24
+-- Tiempo de generación: 14-10-2021 a las 02:51:05
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.6
 
@@ -92,7 +92,27 @@ INSERT INTO `productos` (`id_plato`, `nombre_plato`, `precio`, `id_categoria`, `
 (24, 'Lengua a la vinagreta', 1700, 4, NULL),
 (25, 'Matambre de carne', 2000, 4, NULL),
 (26, 'Matambre de pollo', 1700, 4, NULL),
-(27, 'Papas Fritas Chicas', 250, 5, 'Para 3 personas');
+(27, 'Papas Fritas Chicas', 250, 5, 'Para 3 personas'),
+(28, 'Papas Fritas Chicas', 250, 5, 'Para 3 personas'),
+(29, 'Papas Fritas Grandes', 300, 5, 'Para 4 o 5 personas'),
+(30, 'Papas al horno Chicas', 250, 5, 'Para 3 personas'),
+(31, 'Papas al horno Grandes', 350, 5, 'Para 4 o 5 personas'),
+(32, 'Verduras grilladas Chicas', 250, 5, 'Tomate, cbebolla, calabaza, zapallito y berejena'),
+(33, 'Verduras grilladas Grandes', 350, 5, 'Tomate, cbebolla, calabaza, zapallito y berejena'),
+(34, 'Tortilla Chica', 400, 5, 'Papas, Acelga o Zapallito'),
+(35, 'Tortilla Grande', 500, 5, 'Papas, Acelga o Zapallito'),
+(36, 'Ensalada Rusa chica', 250, 5, 'papas, arbejas y mayonesa (aprox 700gr)'),
+(37, 'Ensalada Rusa mediana', 300, 5, 'papas, arbejas y mayonesa (aprox 900gr)'),
+(38, 'Ensalada Rusa grande', 400, 5, 'papas, arbejas y mayonesa (aprox 1,2 kg.)'),
+(39, 'Puré', 400, 5, 'papa, calabaza o mixto. Aprox 500 gr'),
+(40, 'Croquetas', 130, 5, 'papas o verduras, rellenas de muzzarella y queso rallado'),
+(41, 'Empanadas', 70, 5, 'Cada una. De carne cortada a cuchillo, Pollo y Jamon Queso'),
+(43, 'Supremo completo', 300, 6, 'Tomate, lechuga y mayonesa'),
+(44, 'Supremo Super', 360, 6, 'Tomate, lechuga, jamon, queso y mayonesa'),
+(45, 'Milanesa Carne Completa', 300, 6, 'Tomate, lechuga y mayonesa'),
+(46, 'Milanesa Carne Super', 360, 6, 'Tomate, lechuga, jamon, queso y mayonesa'),
+(47, 'Lomito', 380, 6, 'Tomate, lechuga y mayonesa'),
+(48, 'Pollo a las brasas', 300, 6, 'Tomate, lechuga y mayonesa');
 
 --
 -- Índices para tablas volcadas
@@ -125,7 +145,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id_plato` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_plato` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- Restricciones para tablas volcadas

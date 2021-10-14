@@ -11,9 +11,9 @@ class UserController
     public function __construct()
     {
         $this->userModel = new UserModel();
-        /* $this-> userView = new UserView(); */
+        /*$this-> userView = new FoodView(); */
     }
-/* 
+
     public function sessionStart()
     {
         if (session_status() != PHP_SESSION_ACTIVE)
@@ -34,8 +34,6 @@ class UserController
 
     private function verificaUsuarioPass($userMail, $userPass)
     {
-        // Traer de la base el usuario , del $userMail [mail, encriptado del password]
-        // encriptar el $userPass y "compararlo" con el del usuario
         $user = $this->userModel->getUsuario($userMail);
 
         if (!empty($user) && password_verify($userPass, $user->pass)) {
@@ -56,5 +54,5 @@ class UserController
         } else {
             $this->showLogin('Erorr de login');
         }
-    } */
+    } 
 }
