@@ -1,6 +1,6 @@
 <?php
 
-require_once("app/controller/FoodController.php");         /* al controlador */
+require_once("app/controller/FoodController.php");
 require_once("app/controller/UserController.php");
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
@@ -12,8 +12,8 @@ if (!empty($_GET['action'])) {
 }
 
 $params = explode('/', $action);
-$foodController = new FoodController();      /* crear los controladores */
-$controllerUser = new UserController();
+$foodController = new FoodController();
+$userController = new UserController();
 
 switch ($params[0]) {
     case 'home':
@@ -28,33 +28,37 @@ switch ($params[0]) {
     case 'nosotros':
         $foodController->showNosotros();
         break;
-    /*case 'addCategories':
-        $controllerDelivery->addCategories();
-        break;
-    case 'addFood':
-        $controllerDelivery->addFood();
-        break;
-    case 'updateCategorie':
-        $controllerDelivery->updateCategorie();
-        break;
-    case 'updateFood':
-        $controllerDelivery->updateFood();
-        break;
-    case 'deleteCategorie':
-        $controllerDelivery->deleteCategorie($params[1]);
-        break;
-    case 'deleteFood':
-        $controllerDelivery->deleteFood($params[1]);
-        break;
-    case 'crearUser':
-        $controllerUser->createUser();
-        break;
+
     case 'login':
-        $controllerUser->login();
+        $foodController->showLogin();
         break;
     case 'logout':
-        $controllerUser->logout();
-        break; */
+        $foodController->logout();
+        break;
+
+        /*case 'addCategories':
+        $foodController->addCategories();
+        break;
+    case 'addFood':
+        $foodController->addFood();
+        break;
+    case 'updateCategorie':
+        $foodController->updateCategorie();
+        break;
+    case 'updateFood':
+        $foodController->updateFood();
+        break;
+    case 'deleteCategorie':
+        $foodController->deleteCategorie($params[1]);
+        break;
+    case 'deleteFood':
+        $foodController->deleteFood($params[1]);
+        break;
+        
+    case 'crearUser':
+        $foodController->createUser();
+        break;*/
+
     default:
         echo "Error 404 - Page not fund";
         break;

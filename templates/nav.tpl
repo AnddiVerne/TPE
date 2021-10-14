@@ -67,12 +67,12 @@
                     </li></a>
                     </li>
                     <li class="nav-item">
-                    {if $email}
+                     {if $checkSession} 
                     <a class ="nav-link" href="logout">Desconectarse</a>
-                     {else}
+                    {else}
                     <a class="nav-link" href="login">Loguearse</a>
-                    {/if}
-                    </li>
+                    {/if} 
+                    </li> 
                 </ul>
             </div>
         </div>

@@ -1,9 +1,10 @@
 <?php
-/* Controlador de tareas */
+
+require_once('app/controller/Controller.php');
 require_once('app/models/FoodModel.php');
 require_once('app/views/FoodView.php');
 
-class FoodController
+class FoodController extends Controller
 {
     private $FoodModel;
     private $FoodView;
@@ -17,40 +18,45 @@ class FoodController
     
     public function showHome()
     {
-        /*  $this->checkSession(); */
+        $session = $this->checkSession();
         
-        $this->FoodView->showHome();
+        $this->FoodView->showHome($session);
     }
 
     
     public function showMenu()
     {
-        /*  $this->checkSession(); */
+        $session = $this->checkSession();
         $foods = $this->FoodModel->getAllFoods();
-        $this->FoodView->showMenu($foods);
+        $this->FoodView->showMenu($session, $foods);
     }
 
     public function showCompra()
     {
-        /*  $this->checkSession(); */
-        $this->FoodView->showCompra();
+        $session = $this->checkSession();
+        $this->FoodView->showCompra($session);
     }
 
     
     public function showNosotros()
     {
-        /*  $this->checkSession(); */
-        $this->FoodView->showNosotros();
+        $session = $this->checkSession();
+        $this->FoodView->showNosotros($session);
     }
-    /* private function checkSession()
+
+    public function showLogin()
     {
-        session_start();
-        if (empty($_SESSION['id'])) {
-            header('Location:' . BASE_URL);
-        }
-    } 
-    
-    public function agregarTarea()
+        $session = $this->checkSession(); 
+        $this->FoodView->showLogin($session);
+    }
+
+    public function logout()
+    {
+        session_destroy();
+        header('Location: ' . BASE_URL);
+    }
+
+    /* public function agregarTarea()
     {
         $this->checkSession();
         $descripcion = $_POST['descripcion'];

@@ -1,17 +1,18 @@
 <?php
 
+require_once('app/controller/Controller.php');
 require_once('app/models/UserModel.php');
-/* require_once('app/views/user.view.php'); */
+require_once('app/views/FoodView.php'); 
 
-class UserController
+class UserController extends Controller
 {
-    private $userModel;
-    private $userView;
+    private $UserModel;
+    private $FoodView;
 
     public function __construct()
     {
         $this->userModel = new UserModel();
-        /*$this-> userView = new FoodView(); */
+        $this-> FoodView = new FoodView();
     }
 
     public function sessionStart()
@@ -26,13 +27,13 @@ class UserController
         header('Location: ' . BASE_URL);
     }
 
-    public function showLogin($mensaje = '')
+    public function showLogin()
     {
-
-        $this->userView->mostrarLogin($mensaje);
+        $session = $this->checkSession(); 
+        $this->FoodView->showLogin($session);
     }
 
-    private function verificaUsuarioPass($userMail, $userPass)
+    /* private function verificaUsuarioPass($userMail, $userPass)
     {
         $user = $this->userModel->getUsuario($userMail);
 
@@ -52,7 +53,7 @@ class UserController
         if ($this->verificaUsuarioPass($userMail, $userPass)) {
             header('Location:' . BASE_URL);
         } else {
-            $this->showLogin('Erorr de login');
+            $this->showLogin('Usuario o contraseña incorrecto');
         }
-    } 
+    }  */
 }

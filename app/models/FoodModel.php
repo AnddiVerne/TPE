@@ -1,4 +1,4 @@
-<?php           /* adaptado de la clase, mucho que re mirar */
+<?php           
 
 require_once("app/models/model.php");
 
@@ -11,8 +11,10 @@ class FoodModel extends Model
         $query = $this->pdo->prepare($sql);
         $query->execute();
         $foods = $query->fetchAll(PDO::FETCH_OBJ);
+        
         return $foods;
     }
+
 /* 
     public function getAllCategories()
     {   
@@ -21,7 +23,7 @@ class FoodModel extends Model
         $query->execute();
         $categories = $query->fetchAll(PDO::FETCH_OBJ);
         return $categories;
-    }
+    }   
 
     public function addFood($nombre, $costo, $detalle, $categoria)
     {   $sql = "INSERT INTO comidas (id_plato, nombre_plato, costo, detalle, id_categoria) VALUES (?,?,?,?,?)";
