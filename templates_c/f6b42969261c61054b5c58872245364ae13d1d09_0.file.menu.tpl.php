@@ -1,18 +1,30 @@
 <?php
+<<<<<<< HEAD
 /* Smarty version 3.1.39, created on 2021-10-13 10:49:56
+=======
+/* Smarty version 3.1.39, created on 2021-10-13 10:07:03
+>>>>>>> f182c2353bf82153f75e472807a883e5425a5e51
   from 'C:\xampp\htdocs\Proyectos\TPE\templates\menu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
+<<<<<<< HEAD
   'unifunc' => 'content_61669db4216e67_70426074',
+=======
+  'unifunc' => 'content_616693a7b89681_98041569',
+>>>>>>> f182c2353bf82153f75e472807a883e5425a5e51
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f6b42969261c61054b5c58872245364ae13d1d09' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Proyectos\\TPE\\templates\\menu.tpl',
+<<<<<<< HEAD
       1 => 1634114992,
+=======
+      1 => 1634112412,
+>>>>>>> f182c2353bf82153f75e472807a883e5425a5e51
       2 => 'file',
     ),
   ),
@@ -23,13 +35,20 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
+<<<<<<< HEAD
 function content_61669db4216e67_70426074 (Smarty_Internal_Template $_smarty_tpl) {
+=======
+function content_616693a7b89681_98041569 (Smarty_Internal_Template $_smarty_tpl) {
+>>>>>>> f182c2353bf82153f75e472807a883e5425a5e51
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:nav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 <table class="tabla">
+<<<<<<< HEAD
 
+=======
+>>>>>>> f182c2353bf82153f75e472807a883e5425a5e51
     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['foods']->value, 'plato');
 $_smarty_tpl->tpl_vars['plato']->do_else = true;
@@ -37,8 +56,13 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['plato']->value) 
 $_smarty_tpl->tpl_vars['plato']->do_else = false;
 ?>
 
+<<<<<<< HEAD
         <tr class="platos">
             <td>
+=======
+        <tr>
+            <td id="idPlato">
+>>>>>>> f182c2353bf82153f75e472807a883e5425a5e51
                 <?php echo $_smarty_tpl->tpl_vars['plato']->value->id_plato;?>
 
             </td>
@@ -51,7 +75,11 @@ $_smarty_tpl->tpl_vars['plato']->do_else = false;
 
             </td>
             <td>
+<<<<<<< HEAD
                 <?php echo $_smarty_tpl->tpl_vars['plato']->value->nombre_categoria;?>
+=======
+                <?php echo $_smarty_tpl->tpl_vars['plato']->value->id_categoria;?>
+>>>>>>> f182c2353bf82153f75e472807a883e5425a5e51
 
             </td>
             <td>

@@ -2,11 +2,18 @@
 {include file="nav.tpl"}
 
 <table class="tabla">
+<<<<<<< HEAD
 
     {foreach from=$foods item=plato}
 
         <tr class="platos">
             <td>
+=======
+    {foreach from=$foods item=plato}
+
+        <tr>
+            <td id="idPlato">
+>>>>>>> f182c2353bf82153f75e472807a883e5425a5e51
                 {$plato->id_plato}
             </td>
             <td>
@@ -16,7 +23,11 @@
                 {$plato->precio}
             </td>
             <td>
+<<<<<<< HEAD
                 {$plato->nombre_categoria}
+=======
+                {$plato->id_categoria}
+>>>>>>> f182c2353bf82153f75e472807a883e5425a5e51
             </td>
             <td>
                 {$plato->detalle}
