@@ -1,7 +1,6 @@
 {include file="header.tpl"}
 {include file="nav.tpl"}
 <section class="promociones">
-
     <h1> PROMOCIONES DE LA SEMANA</h1>
 
     <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
