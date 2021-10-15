@@ -11,11 +11,13 @@
                     placeholder="Ingrese su password..." /></label>
             <button class="btn btn-dark">Entrar</button>
         </form>
-        {* {if $mensaje}
+
+        {if $mensaje}
             <div class="alert alert-danger" role="alert">
                 {$mensaje}
             </div>
-        {/if} *}
+        {/if}
+        
 </article>
 
 {include file="footer.tpl"}

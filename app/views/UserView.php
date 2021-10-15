@@ -9,6 +9,7 @@ class UserView
     }
 
     function showLogin($mensaje = ' '){
+        $this ->smarty->assign('titulo', 'Andel');
         $this ->smarty->assign('BASE URL', BASE_URL);
         $this ->smarty->assign('mensaje', $mensaje);
         $this ->smarty->display('teplates/login.tpl');
