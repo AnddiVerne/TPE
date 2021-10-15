@@ -56,35 +56,10 @@ class FoodController extends Controller
         session_destroy();
         header('Location: ' . BASE_URL);
     }
-
-    /* public function agregarTarea()
-    {
-        $this->checkSession();
-        $descripcion = $_POST['descripcion'];
-        $prioridad = $_POST['prioridad'];
-        $this->tareasModel->insertarTarea($descripcion, $prioridad);
-        header('Location: ' . BASE_URL);
-    }
-
-    public function terminarTarea()
-    {
-        $this->checkSession();
-        $tarea_id = $_POST['tarea'];
-        $this->tareasModel->actualizaTarea($tarea_id);
-        header('Location: ' . BASE_URL);
-    }
-
-    public function borrarTarea()
-    {
-        $this->checkSession();
-        $tarea_id = $_POST['tarea'];
-        $this->tareasModel->eliminarTarea($tarea_id);
-        header('Location: ' . BASE_URL);
-    } */
-
+    
     public function addFood()
     {
-        /* $session = $this->checkSession(); */
+         $session = $this->checkSession(); 
         
             $nombre = $_POST['nombre'];
             $precio = $_POST['precio'];

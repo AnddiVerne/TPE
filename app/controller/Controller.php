@@ -8,6 +8,8 @@ class Controller
    
     public function checkSession()
     {
-        return !empty($session['id']);
+        if(!empty($session['id'])){
+            header('Location: '.LOGIN);
+        }
     } 
 }

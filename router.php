@@ -4,6 +4,8 @@ require_once("app/controller/FoodController.php");
 require_once("app/controller/UserController.php");
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
+define('HOME', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/home');
+define('LOGIN', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/login');
 
 if (!empty($_GET['action'])) {
     $action = $_GET['action'];
@@ -29,9 +31,12 @@ switch ($params[0]) {
         $foodController->showNosotros();
         break;
 
-        
+
     case 'login':
         $foodController->showLogin();
+        break;
+    case 'verificar':
+        $userController->verificar();
         break;
     case 'logout':
         $foodController->logout();

@@ -37,7 +37,7 @@ class UserController extends Controller
     {
         $user = $this->userModel->getUsuario($userMail);
 
-        if (!empty($user) && password_verify($userPass, $user->pass)) {
+        if (!empty($user) && password_verify($userPass, $user->clave)) {
             $_SESSION['id'] = $user->id;
             $_SESSION['email'] = $user->email;
             return true;
