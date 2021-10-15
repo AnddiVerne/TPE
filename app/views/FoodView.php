@@ -12,10 +12,10 @@ class FoodView
     {
         $this ->smarty->assign("checkSession", $session);
         $this ->smarty->display('templates/home.tpl');
-        $this ->smarty->display('email', $this->activeSession());
     }
-    function showMenu($session, $foods)
+    function showMenu($session, $foods, $categorias)
     {
+        $this ->smarty->assign('categorias',$categorias);
         $this ->smarty->assign("checkSession", $session);
         $this ->smarty->assign('foods',$foods);
         $this ->smarty->display('templates/menu.tpl');
@@ -35,11 +35,5 @@ class FoodView
         $this ->smarty->assign("checkSession", $session);
         $this ->smarty->display('templates/login.tpl');
     }
-
-     private function activeSession(){
-        session_start();
-        $email = $_SESSION['email'];
-        return $email;
-    }
-} 
+}
 ?>

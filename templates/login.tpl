@@ -1,5 +1,5 @@
 {include file="header.tpl"}
-{include file="nav.tpl"}
+{include file="nav.tpl"} 
 
 <article class="main">
     <form method="POST" action="{BASE_URL}verificar">
@@ -11,13 +11,13 @@
                     placeholder="Ingrese su password..." /></label>
             <button class="btn btn-dark">Entrar</button>
         </form>
-
+{*
         {if $mensaje}
             <div class="alert alert-danger" role="alert">
                 {$mensaje}
             </div>
         {/if}
-        
+        *}
 </article>
 
 {include file="footer.tpl"}

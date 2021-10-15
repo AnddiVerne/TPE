@@ -68,9 +68,9 @@
                     </li>
                     <li class="nav-item">
                      {if $checkSession} 
-                    <a class ="nav-link" href="logout">Cerrar sesión</a>
+                    <a class ="nav-link" href="logout">Desconectarse</a>
                     {else}
-                    <a class="nav-link" href="login">Iniciar sesión</a>
+                    <a class="nav-link" href="login">Loguearse</a>
                     {/if} 
                     </li> 
                 </ul>

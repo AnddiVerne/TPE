@@ -11,59 +11,58 @@ class FoodModel extends Model
         $query = $this->pdo->prepare($sql);
         $query->execute();
         $foods = $query->fetchAll(PDO::FETCH_OBJ);
-        
         return $foods;
     }
 
-/* 
-    public function getAllCategories()
-    {   
-        $sql = "SELECT * FROM categorias";
-        $query = $this->pdo->prepare($sql);
-        $query->execute();
-        $categories = $query->fetchAll(PDO::FETCH_OBJ);
-        return $categories;
-    }   
 
-    public function addFood($nombre, $costo, $detalle, $categoria)
-    {   $sql = "INSERT INTO comidas (id_plato, nombre_plato, costo, detalle, id_categoria) VALUES (?,?,?,?,?)";
+    public function addFood($nombre, $precio, $id_categoria, $descripcion)
+    {   $sql = "INSERT INTO productos (nombre_plato, precio, detalle, id_categoria) VALUES (?,?,?,?)";
         $query = $this->pdo->prepare($sql);
-        $query->execute([$nombre, $costo, $detalle, $categoria]);
+        $query->execute([$nombre, $precio, $descripcion, $id_categoria]);
     }
     
     
-    public function addCategorie($nombreCategoria)
+    public function addCategorie($nombre, $sucursal)
     {
-        $sql = "INSERT INTO `categorias` (`nombre_categoria`) VALUES (?)";
+        $sql = "INSERT INTO `categoria` (`nombre_categoria`, sucursal) VALUES (?)";
         $query = $this->pdo->prepare($sql);
-        $query->execute([$nombreCategoria]);
+        $query->execute([$nombre, $sucursal]);
     }
     
         public function deleteFood($id)
-        {   $sql = "DELETE FROM comidas WHERE id = ?";
+        {   $sql = "DELETE FROM productos WHERE id = ?";
             $query = $this->pdo->prepare($sql);
             $query->execute([$id]);
         }
     
     public function deleteCategorie($id)
-    {   $sql = "DELETE FROM categorias WHERE id = ?";
+    {   $sql = "DELETE FROM categoria WHERE id = ?";
         $query = $this->pdo->prepare($sql);
         $query->execute([$id]);
     }
 
-    public function updateFood($nombre, $costo, $detalle, $categoria){
-        $sql = "UPDATE comidas 
-        SET nombre = ?, costo = ?,detalle = ?, id_categoria = ?
+    public function updateFood($nombre, $precio, $id_categoria, $descripcion){
+        $sql = "UPDATE productos 
+        SET nombre = ?, precio = ?,detalle = ?, id_categoria = ?
         WHERE id_plato = ?";
         $query = $this->pdo->prepare($sql);
-        $query->execute([$nombre, $costo, $detalle, $categoria]);
+        $query->execute([$nombre, $precio, $id_categoria, $descripcion]);
     }
     
-    public function updateCategorie($id, $nombreCategoria, $sucursal){
-        $sql = "UPDATE categorias SET nombre_categoria = ?, sucursal= ? 
+    public function updateCategorie($nombre, $sucursal){
+        $sql = "UPDATE categoria SET nombre_categoria = ?, sucursal= ? 
         WHERE id_categoria = ?";
         $query = $this->pdo->prepare($sql);
-        $query->execute([$id, $nombreCategoria, $sucursal]);
-    } */
+        $query->execute([$nombre, $sucursal]);
+    } 
+    
+    
+    public function getAllCategories()
+    {   
+        $sql = "SELECT * FROM categoria";
+        $query = $this->pdo->prepare($sql);
+        $query->execute();
+        $categories = $query->fetchAll(PDO::FETCH_OBJ);
+        return $categories;
+    } 
 }
-?>
