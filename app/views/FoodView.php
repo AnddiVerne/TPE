@@ -12,6 +12,7 @@ class FoodView
     {
         $this ->smarty->assign("checkSession", $session);
         $this ->smarty->display('templates/home.tpl');
+        $this ->smarty->display('email', $this->activeSession());
     }
     function showMenu($session, $foods)
     {
@@ -34,5 +35,11 @@ class FoodView
         $this ->smarty->assign("checkSession", $session);
         $this ->smarty->display('templates/login.tpl');
     }
-}
+
+     private function activeSession(){
+        session_start();
+        $email = $_SESSION['email'];
+        return $email;
+    }
+} 
 ?>

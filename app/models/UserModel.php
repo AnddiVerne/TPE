@@ -9,11 +9,17 @@ class UserModel extends Model
         $query->execute([$email, $password, $nombre, $apellido, $direccion, $telefono]);
         return $this->pdo->lastInsertId();
     }
-    function getUser($nick)
+
+    
+    function getUsuario($email)
     {
-        $query = $this->pdo->prepare('SELECT * FROM usuarios WHERE nombre_acc = ?');
-        $query->execute([$nick]);
-        $user = $query->fetch(PDO::FETCH_OBJ);
-        return $user;
+        $sql ="SELECT * FROM usuarios WHERE email = ?";
+
+        $stm = $this->pdo->prepare($sql);
+
+        $stm->execute([$email]);
+
+        $usuario = $stm->fetch(PDO::FETCH_OBJ);
+        return $usuario;
     }
 }
